@@ -1,0 +1,17 @@
+@model Evaluacion
+
+@{
+    ViewData["title"]= "Información Evaluacion";
+}
+
+<h1>@ViewData["title"]</h1>
+
+<p>
+    Evaluación: @Model.Nombre </br>
+    ID Estudiante: @Model.AlumnoId </br>
+    Nota: @Model.Nota </br>
+    @Model.Alumno.Nombre
+</p>
+
+<strong>Vista parcial</strong>
+<partial name="ObjetoEscuelaSimple"/>
