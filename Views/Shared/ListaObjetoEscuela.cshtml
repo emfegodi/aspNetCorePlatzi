@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">ID</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,10 @@
     <tr>
       <td>@obj.Nombre</td>
       <td>@obj.Id</td>
+      <td>
+        <a class="btn btn-primary" asp-action="Update" asp-controller="Curso" asp-route-Id=@obj.Id >Editar</a>
+        <a asp-action="Delete" asp-controller="Curso" asp-route-Id=@obj.Id >Eliminar</a>
+      </td>
     </tr>
 }
   </tbody>

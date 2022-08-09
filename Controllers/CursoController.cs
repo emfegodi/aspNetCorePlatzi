@@ -49,6 +49,7 @@ namespace platzi_asp_net_core.Controllers
             {
                 var escuela = _context.Escuelas.FirstOrDefault();
                 curso.EscuelaId = escuela.Id;
+                
                 _context.Cursos.Add(curso);
                 _context.SaveChanges();
                 ViewBag.MensajeExtra="Curso creado";
@@ -58,6 +59,43 @@ namespace platzi_asp_net_core.Controllers
             {
                 return View(curso);
             }
+        }
+        public IActionResult Update(string Id)
+        {
+            Curso curso = null;
+            ViewBag.Fecha = DateTime.Now;
+            curso = _context.Cursos.Find(Id);
+
+            return View(curso);
+        }
+        
+        [HttpPost]
+        public IActionResult Update(Curso curso)
+        {
+            _context.Cursos.Update(curso);
+            _context.SaveChanges();
+            ViewBag.MensajeExtra="Curso modificado";
+
+            return View("Index",curso);
+        }
+
+         public IActionResult Delete(string Id)
+        {
+            Curso curso = null;
+            ViewBag.Fecha = DateTime.Now;
+            curso = _context.Cursos.Find(Id);
+
+            return View(curso);
+        }
+        
+        [HttpPost]
+        public IActionResult Delete(Curso curso)
+        {
+            _context.Cursos.Remove(curso);
+            _context.SaveChanges();
+            ViewBag.MensajeExtra="Curso Eliminado";
+
+            return View("Index",curso);
         }
 
         private EscuelaContext _context;

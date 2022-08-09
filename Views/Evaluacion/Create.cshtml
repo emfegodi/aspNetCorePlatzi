@@ -1,0 +1,34 @@
+﻿@model Evaluacion
+
+@{
+    ViewData["Title"] = "Creación Evaluación";
+    Layout = "Simple";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <div>
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre"/>
+    </div>
+    <div>
+        <label asp-for="Id"></label>
+        <input asp-for="Id"/>
+    </div>
+    <div>
+        <label asp-for="AlumnoId"></label>
+        <input asp-for="AlumnoId"/>
+    </div>
+    <div>
+        <label asp-for="AsignaturaId"></label>
+        <input asp-for="AsignaturaId"/>
+    </div>
+    <div>
+        <label asp-for="Nota"></label>
+        <input asp-for="Nota"/>
+    </div>
+    <input type="submit" value="Crear">
+</form>
+
+<p><i>@ViewBag.Fecha</i></p>
