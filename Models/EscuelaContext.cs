@@ -98,11 +98,11 @@ namespace platzi_asp_net_core.Models
         private static List<Curso> CargarCursos(Escuela escuela)
         {
             return new List<Curso>(){
-                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "101",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana},
-                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "201",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana},
-                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "301",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana},
-                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "401",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana},
-                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "501",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana},
+                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "101",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana, Direccion = "Av. Siempre viva"},
+                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "201",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana, Direccion = "Av. Siempre viva"},
+                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "301",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana, Direccion = "Av. Siempre viva"},
+                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "401",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana, Direccion = "Av. Siempre viva"},
+                new Curso(){Id = Guid.NewGuid().ToString(),Nombre = "501",EscuelaId = escuela.Id,Jornada = TiposJornada.Mañana, Direccion = "Av. Siempre viva"},
             };
         }
 
