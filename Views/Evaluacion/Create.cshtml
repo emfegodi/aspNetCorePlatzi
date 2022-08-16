@@ -1,34 +1,46 @@
-﻿@model Evaluacion
+@model platzi_asp_net_core.Models.Evaluacion
 
 @{
-    ViewData["Title"] = "Creación Evaluación";
-    Layout = "Simple";
+    ViewData["Title"] = "Create";
 }
 
-<h1>@ViewData["Title"]</h1>
-<div asp-validation-summary="All"></div>
-<form method="POST">
-    <div>
-        <label asp-for="Nombre"></label>
-        <input asp-for="Nombre"/>
-    </div>
-    <div>
-        <label asp-for="Id"></label>
-        <input asp-for="Id"/>
-    </div>
-    <div>
-        <label asp-for="AlumnoId"></label>
-        <input asp-for="AlumnoId"/>
-    </div>
-    <div>
-        <label asp-for="AsignaturaId"></label>
-        <input asp-for="AsignaturaId"/>
-    </div>
-    <div>
-        <label asp-for="Nota"></label>
-        <input asp-for="Nota"/>
-    </div>
-    <input type="submit" value="Crear">
-</form>
+<h2>Create</h2>
 
-<p><i>@ViewBag.Fecha</i></p>
+<h4>Evaluacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlumnoId" class="control-label"></label>
+                <select asp-for="AlumnoId" class ="form-control" asp-items="ViewBag.AlumnoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsignaturaId" class="control-label"></label>
+                <select asp-for="AsignaturaId" class ="form-control" asp-items="ViewBag.AsignaturaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nota" class="control-label"></label>
+                <input asp-for="Nota" class="form-control" />
+                <span asp-validation-for="Nota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
